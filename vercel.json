@@ -3,10 +3,7 @@
       "api/*.php": {
         "runtime": "vercel-php@0.5.5",
         "memory": 1024,
-        "maxDuration": 10,
-        "environment": {
-          "INSTALL_DEPENDENCIES": "apt-get update && apt-get install -y libssl-dev || apt-get install -y libssl1.0"
-        }
+        "maxDuration": 10
       }
     },
     "routes": [
@@ -48,7 +45,7 @@
         "src": "api/index.php",
         "use": "@vercel/php",
         "config": {
-          "buildCommand": "apt-get update && apt-get install -y libssl-dev || apt-get install -y libssl1.0 && vercel build"
+          "buildCommand": "apt-get update && apt-get install -y libssl-dev || apt-get install -y libssl1.0"
         }
       }
     ]
